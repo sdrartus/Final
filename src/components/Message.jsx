@@ -29,7 +29,7 @@ const Message = ({ message }) => {
         <span>just now</span> {/* can change this */}
       </div>
       <div className="messageContent">
-        <p>{message.text}</p>
+        <p>{message.text}  </p> {/* filter */}
         {message.img && <img src={message.img} alt="" />}
       </div>
     </div>
