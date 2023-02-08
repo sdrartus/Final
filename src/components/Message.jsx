@@ -2,6 +2,14 @@ import React, { useContext, useEffect, useRef } from "react";
 import { AuthContext } from "../context/AuthContext";
 import { ChatContext } from "../context/ChatContext";
 
+function whitespace(word) {
+  if (word === "shit") {
+    word = "crap";
+  }
+  return word;
+}
+
+//TEXT PREPROCESSING 
 const Message = ({ message }) => {
   const { currentUser } = useContext(AuthContext);
   const { data } = useContext(ChatContext);
@@ -29,7 +37,7 @@ const Message = ({ message }) => {
         <span>just now</span> {/* can change this */}
       </div>
       <div className="messageContent">
-        <p>{message.text}  </p> {/* filter */}
+        <p>{message.text} </p> {/* filter */}
         {message.img && <img src={message.img} alt="" />}
       </div>
     </div>
