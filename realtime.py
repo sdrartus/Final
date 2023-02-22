@@ -6,6 +6,8 @@ from tkinter.scrolledtext import ScrolledText
 import nltk
 from nltk.corpus import words
 
+
+
 nltk.download("words")
 
 class wordChecker:

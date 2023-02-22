@@ -1,4 +1,46 @@
-# remove english stop words in a sentence
+# whitespace tokenizer
 
-import nltk
-from nltk.corpus import stopwords
+from nltk.tokenize import WhitespaceTokenizer
+
+# function that tokenizes the sent and set to lowercase (normalizes)
+
+def tokenizer(sent):
+    tk = WhitespaceTokenizer()
+    # tokened = tk.tokenize(sent.lower())
+    # return tokened
+    tokened =  dict.fromkeys(tk.tokenize(sent.lower()))
+    return tokened
+
+
+# trysentence = "hello my friend!"
+# print(tokenizer("HEllo my friend!!!!"))
+
+# leet converter
+alt_leet = {
+    'a':['4', '/\ ', '@', '/-\ ', ' |-\ ', '*', 'ä', 'á', 'à', 'â', 'a^', 'ã', 'å', 'ą', 'ª','∀', '∧', 'α','' ],
+    'b':['8', '|3', '13', 'ß', 'þ', 'v'],
+    'c':['ć', 'č','ç', '©', 'σ', '(', '¢', '<', '[', '©'],
+    'd':['[)', '|>', '|)', '|]'],
+    'e':['3', '€', 'є', '[-' ],
+    'f':['|=', 'ƒ', '/=' ],
+    'g':['6', '(_+'],
+    'h':['#', '/-/', '[-]', ']-[', ')-(', '(-)', ':-:', '|~|', '|-|', ']~[', '}{'],
+    'i':['1', '!', '|', '][', ']', ':'],
+    'j':[ ' _| ', '_/', '¿', '(/ ʝ', ';'],
+    'k':['X', '|<', '|{', 'ɮ'],
+    'l':['£', '1_ ', 'ℓ', '|_', '[_'],
+    'm':['|V|', '|\/|', '/\/\ ', '/V\ '],
+    'n':['|V', '|\|', '/\/', '[\]', '/V'],
+    'o':['[]', '0', '()', '°'],
+    'p':['|*', '|o', '|º', '|°', '/*'],
+    'q':['¶', '(_,)', '()_', '0_', '°|', '<|', '0,'],
+    'r':['®', '2', '|?', '/2', '®', 'Я', '|2'],
+    's':['§', '5', '$', '_/¯'],
+    't':['7', '†', '¯|¯'],
+    'u':['(_)', '|_|', 'L|', 'µ'],
+    'v':['\/', '|/'],
+    'w':['\/\/', 'vv', '\//', '\^/', '\V/', '\|/', '\_|_/', '\_:_/', ],
+    'x':[' ><', '}{', '×', ')(' ],
+    'y':[' `/', 'φ', '¥', '\/ '],
+    'z':['≥', '7_', '>_ ']
+}
